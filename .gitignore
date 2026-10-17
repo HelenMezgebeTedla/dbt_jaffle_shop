@@ -1,5 +1,5 @@
-
+profiles.yml
+*.duckdb
 target/
 dbt_modules/
 logs/
-**/.DS_Store
