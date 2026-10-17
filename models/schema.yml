@@ -80,3 +80,23 @@ models:
         description: Amount of the order (AUD) paid for by gift card
         tests:
           - not_null
+
+
+  - name: monthly_revenue
+    description: Monthly revenue per customer, counting only completed and shipped orders.
+
+    columns:
+      - name: revenue_month
+        tests:
+          - not_null
+
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('customers')
+              field: customer_id
+
+      - name: total_revenue
+        tests:
+          - not_null
